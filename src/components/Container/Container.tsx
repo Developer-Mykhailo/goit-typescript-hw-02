@@ -1,6 +1,8 @@
 import s from "./Container.module.css";
 
-const Container = ({ children }) => {
+import { Children } from "../App/App.types";
+
+const Container = ({ children }: Children) => {
   return <div className={s.container}>{children}</div>;
 };
 
