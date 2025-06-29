@@ -3,7 +3,9 @@ import { ReactNode } from "react";
 export type TypePhoto = {
   id: string;
   src: string;
-  alt?: string;
+  alt: string;
+  urls: { small: string; regular: string };
+  alt_description: string;
 };
 
 export type TypeChildren = {
@@ -14,10 +16,14 @@ export type TypeError = {
   error: string | boolean;
 };
 
+type OpenModal = (args: Partial<TypePhoto>) => void;
+
+export type ImageGalleryProps = {
+  photos: TypePhoto[];
+  openModal: OpenModal;
+};
+
 export type ImageCardProps = {
-  data: {
-    urls: { small: string; regular: string };
-    alt_description: string;
-  };
-  openModal: (args: { src: string; alt?: string }) => void;
+  data: Pick<TypePhoto, "urls" | "alt_description">;
+  openModal: OpenModal;
 };

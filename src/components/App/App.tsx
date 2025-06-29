@@ -59,7 +59,7 @@ function App() {
   }, [query, page]);
 
   //modal
-  const handleOpenModal = (image: TypePhoto) => {
+  const handleOpenModal = (image: Partial<TypePhoto>) => {
     setModalImage(image);
 
     setModalIsOpen(true);

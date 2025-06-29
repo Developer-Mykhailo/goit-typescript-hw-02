@@ -1,9 +1,9 @@
-//ImageGallery.jsx
+import { ImageGalleryProps } from "../App/App.types";
+import ImageCard from "../ImageCard/ImageCard";
 import s from "./ImageGallery.module.css";
 
-import ImageCard from "../ImageCard/ImageCard";
-
-const ImageGallery = ({ photos, openModal }) => {
+//JSX
+const ImageGallery = ({ photos, openModal }: ImageGalleryProps) => {
   return (
     <ul className={s.list}>
       {photos.map(({ id, urls, alt_description }) => (
