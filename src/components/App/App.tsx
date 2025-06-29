@@ -7,11 +7,11 @@ import { ClipLoader } from "react-spinners";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import ImageModal from "../ImageModal/ImageModal";
-import { Photo } from "./App.types";
+import { TypePhoto } from "./App.types";
 
 // JSX
 function App() {
-  const [photos, setPhotos] = useState<Photo[]>([]);
+  const [photos, setPhotos] = useState<TypePhoto[]>([]);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -19,7 +19,7 @@ function App() {
   const [isEmpty, setIsEmpty] = useState(false);
   const [error, setError] = useState<string | boolean>(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalImage, setModalImage] = useState<Partial<Photo>>({});
+  const [modalImage, setModalImage] = useState<Partial<TypePhoto>>({});
 
   //handlers
   const handleQueryChange = (query: string) => {
@@ -59,7 +59,7 @@ function App() {
   }, [query, page]);
 
   //modal
-  const handleOpenModal = (image: Photo) => {
+  const handleOpenModal = (image: TypePhoto) => {
     setModalImage(image);
 
     setModalIsOpen(true);

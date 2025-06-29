@@ -1,6 +1,7 @@
+import { TypeError } from "../App/App.types";
 import s from "./ErrorMessage.module.css";
 
-const ErrorMessage = ({ error }) => {
+const ErrorMessage = ({ error }: TypeError) => {
   return (
     <>
       <p className={s.error_message}>{error}</p>
