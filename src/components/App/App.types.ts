@@ -34,3 +34,7 @@ export type ImageModalProps = {
   src?: string;
   alt?: string;
 };
+
+export type LoadMoreBtnProps = {
+  onClick: () => void;
+};
