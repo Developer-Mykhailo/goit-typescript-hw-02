@@ -27,3 +27,10 @@ export type ImageCardProps = {
   data: Pick<TypePhoto, "urls" | "alt_description">;
   openModal: OpenModal;
 };
+
+export type ImageModalProps = {
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  src?: string;
+  alt?: string;
+};
