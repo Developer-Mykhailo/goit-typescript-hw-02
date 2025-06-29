@@ -1,27 +1,27 @@
-//App.jsx
 import { useEffect, useState } from "react";
-import Container from "./components/Container/Container";
-import SearchBar from "./components/SearchBar/SearchBar";
-import { fetchDataAPI } from "./services/unsplashAPI";
-import ImageGallery from "./components/ImageGallery/ImageGallery";
+import Container from "../Container/Container";
+import SearchBar from "../SearchBar/SearchBar";
+import { fetchDataAPI } from "../../services/unsplashAPI";
+import ImageGallery from "../ImageGallery/ImageGallery";
 import { ClipLoader } from "react-spinners";
-import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
-import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
-import ImageModal from "./components/ImageModal/ImageModal";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import ImageModal from "../ImageModal/ImageModal";
 
+// JSX
 function App() {
-  const [photos, setPhotos] = useState([]);
+  const [photos, setPhotos] = useState<Photo[]>([]);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
   const [isEmpty, setIsEmpty] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<string | boolean>(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalImage, setModalImage] = useState({});
+  const [modalImage, setModalImage] = useState<Partial<Photo>>({});
 
   //handlers
-  const handleQueryChange = (query) => {
+  const handleQueryChange = (query: string) => {
     setQuery(query);
     setPage(1);
     setIsEmpty(false);
@@ -48,7 +48,7 @@ function App() {
         }
         //
       } catch (error) {
-        setError(error.message);
+        if (error instanceof Error) setError(error.message);
       } finally {
         setIsLoading(false);
       }
@@ -58,7 +58,7 @@ function App() {
   }, [query, page]);
 
   //modal
-  const handleOpenModal = (image) => {
+  const handleOpenModal = (image: Photo) => {
     setModalImage(image);
 
     setModalIsOpen(true);
