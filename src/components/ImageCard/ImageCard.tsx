@@ -1,6 +1,7 @@
+import { ImageCardProps } from "../App/App.types";
 import s from "./ImageCard.module.css";
 
-const ImageCard = ({ data, openModal }) => {
+const ImageCard = ({ data, openModal }: ImageCardProps) => {
   const {
     urls: { small, regular },
     alt_description,
