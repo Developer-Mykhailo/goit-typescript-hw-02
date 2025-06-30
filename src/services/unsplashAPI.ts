@@ -23,9 +23,8 @@ export const fetchDataAPI = async (
     if (error instanceof Error) {
       console.error("Error fetching photos:", error.message);
       throw error;
-    } else {
-      console.error("Error fetching photos:", error);
     }
+    console.error("Error fetching photos:", error);
     throw new Error("Failed to fetch data from Unsplash API.");
   }
 };
