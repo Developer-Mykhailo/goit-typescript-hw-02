@@ -1,5 +1,3 @@
-//unsplashAPI.js
-
 import axios from "axios";
 
 export const fetchDataAPI = async (query = "", page = 1) => {
