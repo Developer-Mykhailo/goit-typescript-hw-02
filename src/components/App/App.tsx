@@ -17,7 +17,7 @@ function App() {
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
   const [isEmpty, setIsEmpty] = useState(false);
-  const [error, setError] = useState<string | boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalImage, setModalImage] = useState<Partial<TypePhoto>>({});
 

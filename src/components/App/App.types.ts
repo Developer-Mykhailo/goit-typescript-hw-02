@@ -13,7 +13,7 @@ export type TypeChildren = {
 };
 
 export type TypeError = {
-  error: string | boolean;
+  error: string;
 };
 
 type OpenModal = (args: Partial<TypePhoto>) => void;
