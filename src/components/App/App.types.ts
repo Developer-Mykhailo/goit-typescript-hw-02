@@ -42,3 +42,9 @@ export type LoadMoreBtnProps = {
 export type Search = {
   onSubmit: (query: string) => void;
 };
+
+export type UnsplashAPIResponse = {
+  total: number;
+  total_pages: number;
+  results: TypePhoto[];
+};
