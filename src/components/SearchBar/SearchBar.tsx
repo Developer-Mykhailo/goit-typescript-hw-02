@@ -1,17 +1,18 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { CiSearch } from "react-icons/ci";
 import s from "./SearchBar.module.css";
+import { Search } from "../App/App.types";
 
-const SearchBar = ({ onSubmit }) => {
+const SearchBar = ({ onSubmit }: Search) => {
   const [inputValue, setInputValue] = useState("");
 
   //handlers
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!inputValue.trim()) {
       return toast.error("Enter some query");

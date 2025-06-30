@@ -38,3 +38,7 @@ export type ImageModalProps = {
 export type LoadMoreBtnProps = {
   onClick: () => void;
 };
+
+export type Search = {
+  onSubmit: (query: string) => void;
+};
