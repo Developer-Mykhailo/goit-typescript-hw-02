@@ -11,8 +11,9 @@ export const fetchDataAPI = async (
       "https://api.unsplash.com/search/photos",
       {
         headers: {
-          Authorization:
-            "Client-ID mByrnsyWzIU56FrsYJ5CK5nh9i8ZH7MNjz_FqZiYhYk",
+          // Authorization:
+          //   `Client-ID mByrnsyWzIU56FrsYJ5CK5nh9i8ZH7MNjz_FqZiYhYk`,
+          Authorization: `Client-ID ${API_KEY}`,
         },
         params: {
           query,
