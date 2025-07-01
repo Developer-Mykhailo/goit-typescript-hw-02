@@ -1,7 +1,6 @@
 import axios from "axios";
 import { UnsplashAPIResponse } from "../components/App/App.types";
 const API_KEY = import.meta.env.VITE_ACCESS_KEY;
-console.log("API_KEY =", API_KEY);
 
 export const fetchDataAPI = async (
   query: string = "",
@@ -12,8 +11,6 @@ export const fetchDataAPI = async (
       "https://api.unsplash.com/search/photos",
       {
         headers: {
-          // Authorization:
-          //   `Client-ID mByrnsyWzIU56FrsYJ5CK5nh9i8ZH7MNjz_FqZiYhYk`,
           Authorization: `Client-ID ${API_KEY}`,
         },
         params: {
