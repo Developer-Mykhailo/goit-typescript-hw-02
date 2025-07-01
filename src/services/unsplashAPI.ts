@@ -1,6 +1,7 @@
 import axios from "axios";
 import { UnsplashAPIResponse } from "../components/App/App.types";
 const API_KEY = import.meta.env.VITE_ACCESS_KEY;
+console.log("API_KEY =", API_KEY);
 
 export const fetchDataAPI = async (
   query: string = "",
