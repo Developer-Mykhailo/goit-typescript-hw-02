@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 
 export type TypePhoto = {
   id: string;
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
   urls: { small: string; regular: string };
   alt_description: string;
 };

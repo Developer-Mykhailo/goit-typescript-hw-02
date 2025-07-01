@@ -7,16 +7,20 @@ export const fetchDataAPI = async (
   page: number = 1
 ): Promise<UnsplashAPIResponse> => {
   try {
-    const { data } = await axios.get("https://api.unsplash.com/search/photos", {
-      headers: {
-        Authorization: "Client-ID mByrnsyWzIU56FrsYJ5CK5nh9i8ZH7MNjz_FqZiYhYk",
-      },
-      params: {
-        query,
-        page,
-        per_page: 10,
-      },
-    });
+    const { data } = await axios.get<UnsplashAPIResponse>(
+      "https://api.unsplash.com/search/photos",
+      {
+        headers: {
+          Authorization:
+            "Client-ID mByrnsyWzIU56FrsYJ5CK5nh9i8ZH7MNjz_FqZiYhYk",
+        },
+        params: {
+          query,
+          page,
+          per_page: 10,
+        },
+      }
+    );
 
     return data;
   } catch (error) {
